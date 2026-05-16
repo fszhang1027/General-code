@@ -35,7 +35,7 @@ public class JwtUtil {
     /**
      * 从令牌中获取用户ID
      */
-    public Long getUserIdFromToken(String token) {
+    public Long getUserId(String token) {
         DecodedJWT jwt = verifyToken(token);
         if (jwt != null) {
             return jwt.getClaim("userId").asLong();
@@ -46,7 +46,7 @@ public class JwtUtil {
     /**
      * 从令牌中获取用户名
      */
-    public String getUsernameFromToken(String token) {
+    public String getUsername(String token) {
         DecodedJWT jwt = verifyToken(token);
         if (jwt != null) {
             return jwt.getClaim("username").asString();
@@ -57,7 +57,7 @@ public class JwtUtil {
     /**
      * 检查令牌是否过期
      */
-    public boolean isTokenExpired(String token) {
+    public boolean isExpired(String token) {
         DecodedJWT jwt = verifyToken(token);
         if (jwt != null) {
             return jwt.getExpiresAt().before(new Date());
