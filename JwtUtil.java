@@ -55,6 +55,17 @@ public class JwtUtil {
     }
 
     /**
+     * 从令牌中获取用户角色
+     */
+    public String getRole(String token) {
+        DecodedJWT jwt = verifyToken(token);
+        if (jwt != null) {
+            return jwt.getClaim("role").asString();
+        }
+        return null;
+    }
+
+    /**
      * 检查令牌是否过期
      */
     public boolean isExpired(String token) {
