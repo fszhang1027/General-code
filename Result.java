@@ -1,14 +1,3 @@
-package com.sheng.heritagenexus.common;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-/**
- * @author 张福生
- * @version 1.0
- * @data 2025/12/30 15:35
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
